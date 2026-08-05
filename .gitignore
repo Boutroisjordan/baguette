@@ -1,0 +1,10 @@
+
+# ide
+.vscode
+.idea
+
+# env
+*.env
+
+# Build
+bin
