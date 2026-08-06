@@ -5,7 +5,6 @@ package cmd
 
 import (
 	"baguette/internal/filesearch"
-	"flag"
 	"fmt"
 	"log"
 
@@ -14,10 +13,9 @@ import (
 
 // fsCmd represents the fs command
 var fsCmd = &cobra.Command{
-	Use:        "fs",
-	Short:      "Search string in file",
-	Long:       `Search string in file`,
-	flag.Usage: "baguette fs -f \"./file.txt\" -s \"hello world\"",
+	Use:   "fs",
+	Short: "Search string in file",
+	Long:  `Search string in file`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		filepath, err := cmd.Flags().GetString("filepath")
