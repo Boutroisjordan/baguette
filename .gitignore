@@ -2,9 +2,16 @@
 # ide
 .vscode
 .idea
+.DS_store
 
 # env
 *.env
 
 # Build
 bin
+
+# Data folder
+data
+
+# Other
+todo.txt
