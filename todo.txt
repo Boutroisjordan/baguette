@@ -1,0 +1,32 @@
+# Todo list
+
+## Split internal /docker & /loadbench logic
+
+- create loadbench command
+- add loadbench workflow logic in /internal/loadbench and call docker func
+
+- remove docker cmd
+- split client, config, types in /docker
+- remove displaying features in /docker
+
+- create utils for tmp displaying func
+
+## Connection to docker
+
+### Add predictable path docker.sock
+
+- Add predictable docker.sock depending on GOOS
+- (feature/evolution): Split context/config creation from Connexion
+    - to loadbench you need to create a valid Configuration persist by sqlite
+    - then you could load and select a Configuration
+
+### load cmd
+
+- Add Configuration selection
+    - select
+    - try to connect
+- (if success) Add container selection
+    - display container list (with id)
+    - ask the container id (user Input)
+    - measure metrics
+    - display report

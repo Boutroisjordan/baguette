@@ -40,3 +40,6 @@ clean:
 
 install:
 	go install .
+
+# Todo: Add linting go cmd and prehook's
+#lint:
