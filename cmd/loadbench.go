@@ -4,28 +4,41 @@ Copyright © 2026 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"baguette/internal/config"
 	"baguette/internal/loadbench"
+	"fmt"
 
 	"github.com/spf13/cobra"
 )
 
 // loadbenchCmd represents the loadbench command
 var loadbenchCmd = &cobra.Command{
-	Use:   "loadbench",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:   "load",
+	Short: "",
+	Long:  "",
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("loadbench load")
 		loadbench.Load()
+	},
+}
+
+var wizard = &cobra.Command{
+	Use:   "init",
+	Short: "",
+	Long:  "",
+	Run: func(cmd *cobra.Command, args []string) {
+		err := config.ReadJson("./data/config.json")
+		if err != nil {
+			return
+		}
+
+		//loadbench.InitializeConfig()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(loadbenchCmd)
+	rootCmd.AddCommand(wizard)
 
 	// Here you will define your flags and configuration settings.
 
